@@ -1,0 +1,18 @@
+# Core app
+gradio>=4.40.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.1
+
+# LangChain ecosystem
+langchain>=0.2.10
+langchain-core>=0.2.23
+langchain-openai>=0.1.17
+langchain-community>=0.2.10
+langchain-text-splitters>=0.2.2
+langchain-chroma>=0.1.4
+
+# Vector store
+chromadb>=0.5.4
+
+# Optional: testing
+pytest>=8.2.0

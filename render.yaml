@@ -1,0 +1,18 @@
+services:
+- type: web
+  name: eis-rag-bot
+  env: python
+  plan: free
+  buildCommand: pip install -r requirements.txt && python -m eis_rag.ingest
+  startCommand: python app.py
+  envVars:
+  - key: OPENAI_API_KEY
+    sync: false          # set this in dashboard
+  - key: PERSIST_DIR
+    value: .chroma
+  - key: PYTHON_VERSION
+    value: 3.11.9
+  disk:
+    name: chroma
+    mountPath: /opt/render/project/src/.chroma
+    sizeGB: 1

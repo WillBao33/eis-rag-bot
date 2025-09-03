@@ -1,3 +1,5 @@
+import os
+
 import gradio as gr
 from eis_rag.rag_chain import build_chain
 
@@ -15,4 +17,9 @@ with gr.Blocks(title="Engineering Innovation Studio Assistant") as demo:
     msg.submit(respond, [msg, chat], [chat, msg])
 
 if __name__ == "__main__":
-    demo.launch()
+    # uncomment below if for local launch
+    # demo.launch()
+
+    # for render deployment
+    port = int(os.environ.get("PORT", "7860"))
+    demo.launch(server_name="0.0.0.0", server_port=port)
